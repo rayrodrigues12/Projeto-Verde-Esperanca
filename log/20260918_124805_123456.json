@@ -1,0 +1,10 @@
+{
+    "data_proc": "2026-09-18",
+    "hora_proc": "12:48:05",
+    "cliente": 123456,
+    "valor_proc": 10000.00,
+    "valor_mdr": 100.00,
+    "valor_credito": 9900.00,
+    "data_credito": "2026-09-21",
+    "metodo": "DEBITO"
+}

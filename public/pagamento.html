@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Simulador de Meio de Pagamento</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>Simulador de Meio de Pagamento</h1>
+
+        <p>
+            Informe os dados da transação para realizar o processamento.
+        </p>
+
+        <form id="paymentForm" action="/pagto" method="POST">
+
+            <div class="campo">
+                <label for="codigo">Código</label>
+
+                <input
+                    type="text"
+                    id="codigo"
+                    name="codigo"
+                    inputmode="numeric"
+                    maxlength="6"
+                    pattern="[0-9]{6}"
+                    placeholder="000000"
+                    required
+                >
+            </div>
+
+            <div class="campo">
+                <label for="valor">
+                    Valor da compra/doação (R$)
+                </label>
+
+                <input
+                    type="number"
+                    id="valor"
+                    name="valor"
+                    min="10.00"
+                    step="0.01"
+                    placeholder="10.00"
+                    required
+                >
+            </div>
+
+            <fieldset>
+                <legend>Meio de pagamento</legend>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="tipo"
+                        value="0"
+                        checked
+                    >
+                    Pix
+                </label>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="tipo"
+                        value="1"
+                    >
+                    Débito
+                </label>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="tipo"
+                        value="2"
+                    >
+                    Crédito
+                </label>
+            </fieldset>
+
+            <p id="message"></p>
+
+            <button type="submit">
+                Processar pagamento
+            </button>
+
+        </form>
+
+    </main>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
