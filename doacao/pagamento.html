@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Verde Esperança | Doação</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-container">
+
+            <div class="marca">
+
+                <div class="marca-logo">
+                    🌱
+                </div>
+
+                <div class="marca-texto">
+                    <h1>Verde Esperança</h1>
+                    <p>Juntos por um futuro mais verde</p>
+                </div>
+
+            </div>
+
+            <nav class="menu" aria-label="Navegação principal">
+
+                <a href="../index.html">
+                    Início
+                </a>
+
+                <a href="../projetos.html">
+                    Projetos
+                </a>
+
+                <a href="../contato.html">
+                    Contato
+                </a>
+
+                <a
+                    class="apoiar"
+                    href="../contato.html#voluntariado"
+                >
+                    Apoiar
+                </a>
+
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- Conteúdo principal -->
+    <main>
+
+        <a
+            class="voltar-doacao"
+            href="index.html"
+        >
+            ← Voltar para Doação
+        </a>
+
+
+        <section class="form-container">
+
+            <div class="titulo-doacao">
+
+                <h2>Realizar Doação</h2>
+
+                <p>
+                    Informe a contribuição para realizar sua doação.
+                </p>
+
+            </div>
+
+
+            <!--
+                FORMULÁRIO DE PAGAMENTO
+
+                Os nomes codigo, valor e tipo
+                são enviados para /pagto.
+            -->
+
+            <form
+                id="paymentForm"
+                action="/pagto"
+                method="POST"
+            >
+
+                <!-- Código -->
+                <div class="form-group">
+
+                    <label for="codigo">
+                        Código:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="codigo"
+                        name="codigo"
+                        inputmode="numeric"
+                        pattern="[0-9]{6}"
+                        maxlength="6"
+                        placeholder="000000"
+                        required
+                    >
+
+                    <small>
+                        Digite exatamente 6 números.
+                    </small>
+
+                </div>
+
+
+                <!-- Valor -->
+                <div class="form-group">
+
+                    <label for="valor">
+                        Valor da doação (R$):
+                    </label>
+
+                    <input
+                        type="number"
+                        id="valor"
+                        name="valor"
+                        min="10.00"
+                        step="0.01"
+                        placeholder="10.00"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Meio de pagamento -->
+                <div class="form-group">
+
+                    <p class="titulo-pagamento">
+                        Meio de pagamento:
+                    </p>
+
+
+                    <label class="opcao-pagamento">
+
+                        <input
+                            type="radio"
+                            name="tipo"
+                            value="0"
+                            checked
+                            required
+                        >
+
+                        Pix
+
+                    </label>
+
+
+                    <label class="opcao-pagamento">
+
+                        <input
+                            type="radio"
+                            name="tipo"
+                            value="1"
+                        >
+
+                        Débito
+
+                    </label>
+
+
+                    <label class="opcao-pagamento">
+
+                        <input
+                            type="radio"
+                            name="tipo"
+                            value="2"
+                        >
+
+                        Crédito
+
+                    </label>
+
+                </div>
+
+
+                <!-- Mensagem de validação -->
+                <p id="message"></p>
+
+
+                <!-- Envio -->
+                <button
+                    class="botao-doacao"
+                    type="submit"
+                >
+                    Realizar Doação
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- Rodapé -->
+    <footer>
+
+        <p>
+            &copy; 2026 Verde Esperança
+        </p>
+
+    </footer>
+
+
+    <!-- Validação e preparação dos dados -->
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>
